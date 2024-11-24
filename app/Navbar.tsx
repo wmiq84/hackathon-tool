@@ -1,8 +1,14 @@
+'use client'
+
+import classNames from 'classnames';
 import Link from 'next/link';
 import React from 'react';
 import { FaLaptopCode } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+	const currentPath = usePathname();
+
 	const links = [
 		{
 			label: 'Dashboard',
@@ -24,7 +30,12 @@ const Navbar = () => {
 					<Link
 						key={link.href}
 						href={link.href}
-						className="text-zinc-500 hover:text-zinc-800 transition-colors"
+						className={classNames({
+							'text-zinc-900': link.href === currentPath,
+							'text-zinc-500': link.href !== currentPath,
+							'hover:text-zinc-800 transition-colors': true,
+						})}
+						// "text-zinc-500 hover:text-zinc-800 transition-colors"
 					>
 						{link.label}
 					</Link>
