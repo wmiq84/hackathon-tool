@@ -21,7 +21,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<nav className="flex gap-5 border-b p-4 mb-5 h-14 items-center">
+		<nav className="flex gap-5 border-b p-5 mb-5 h-14 items-center">
 			<Link href="/">
 				<FaLaptopCode />
 			</Link>
